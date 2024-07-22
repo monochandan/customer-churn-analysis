@@ -34,8 +34,6 @@ CustomerInfo
 	CustomerId
 	Surname
 
-TiemInteligenceTable
-
 Cleaning Data:
 	Transforming (cleaning) the data using inbuilt ETL tool
 
@@ -44,15 +42,15 @@ Cleaning Data:
 
 Create  a table: (Date Hierarchies or Time Inteligence)
 
-		Date Master = CALENDAR(FIRSTDATE(Bank_Churn[Bank DOJ]), LASTDATE(Bank_Churn[Bank DOJ]))
+	Date Master = CALENDAR(FIRSTDATE(Bank_Churn[Bank DOJ]), LASTDATE(Bank_Churn[Bank DOJ]))
 
 Then mark the table as a date table
 	
 create a new columns in this Date Master:
 		
-		Year = year('Date Master'[Date])
-		Month = month('Date Master'[Date])
-		Month Name = Format('Date Master'[Date], "MMM")
+	Year = year('Date Master'[Date])
+	Month = month('Date Master'[Date])
+	Month Name = Format('Date Master'[Date], "MMM")
 
 Recreate the relations between the tables: (without creating this relations data visualizations will not be the accurate)
 	
